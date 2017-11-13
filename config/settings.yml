@@ -4,3 +4,6 @@ user:
   minimum_password: 6
   size_gra: 80
   session: "1"
+
+reset_pass:
+  hour: 2

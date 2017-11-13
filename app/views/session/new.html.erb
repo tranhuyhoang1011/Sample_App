@@ -9,12 +9,14 @@
       <%= f.email_field t("user.email"), class: "form-control" %>
 
       <%= f.label t("user.pass") %>
+      <%= link_to t("session.forgot_pass"), new_password_reset_path %>
       <%= f.password_field t("user.pass"), class: "form-control" %>
 
       <%= f.label t("session.remember"), class: "checkbox inline" do %>
         <%= f.check_box :remember_me %>
         <span><%= t("session.remember_on_computer") %></span>
-        <% end %>
+      <% end %>
+
       <%= f.submit t("session.des1"), class: "btn btn-primary" %>
     <% end %>
 

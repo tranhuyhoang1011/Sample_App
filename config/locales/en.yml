@@ -136,4 +136,9 @@ en:
     max_size: "Maximum file size is 5MB. Please choose a smaller file."
     form_contains: "The form contains"
 
-
+  follow:
+    sub_fl: "Follow"
+    sub_unfl: "Unfollow"
+    following: "Following"
+    follower: "Followers"
+    user_error: "Can't find user"

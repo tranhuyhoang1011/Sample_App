@@ -20,15 +20,15 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      log_in @user
-      flash[:success] = t "flash.success"
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = t "mail.info"
+      redirect_to root_url
     else
       render :new
     end
   end
 
-  def edit;  end
+  def edit; end
 
   def update
     if @user.update_attributes(user_params)
@@ -62,11 +62,10 @@ class UsersController < ApplicationController
   end
 
   def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = t "session.pl_log"
-      redirect_to login_url
-    end
+    return if logged_in?
+    store_location
+    flash[:danger] = t "session.pl_log"
+    redirect_to login_url
   end
 
   def correct_user

@@ -9,8 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    return if @user
-    flash[:danger] = t "flash.error"
+    @microposts = @user.microposts.user_create.paginate page: params[:page]
   end
 
   def new

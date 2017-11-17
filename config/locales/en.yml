@@ -82,4 +82,15 @@ en:
   flash:
     success: "Welcome to the Sample App"
     error: "Error"
-
+  drop:
+    account: "Account"
+    profile: "Profile"
+    setting: "Setting"
+  session:
+    title: "session"
+    des1: "Log in"
+    des2: "Sign up now!"
+    error1: "Invalid email/password combination"
+    user: "User"
+    des3: "Log out"
+    new: "New user?"

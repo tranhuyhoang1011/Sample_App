@@ -3,7 +3,6 @@ class UsersController < ApplicationController
     @user = User.find_by id: params[:id]
     return if @user
     flash[:danger] = I18n.t "flash.error"
-    redirect_to signup_path
   end
 
   def new

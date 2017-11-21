@@ -3,3 +3,4 @@ user:
   maximum_email: 255
   minimum_password: 6
   size_gra: 80
+  session: "1"

@@ -74,11 +74,17 @@ en:
   user:
     title: "Sign Up"
     descrip1: "This will be a signup page for new users."
-    descrip2: "Create my account"
+    create: "Create my account"
     name: "name"
     pass: "password"
     pass_conf: "password_confirmation"
     email: "email"
+    conf: "Confirmation"
+    delete: "delete"
+    delete1: "User deleted"
+    delete_error: "User not deleted"
+    you_sure: "You_sure?"
+    error: "Can't find user"
   flash:
     success: "Welcome to the Sample App"
     error: "Error"
@@ -96,3 +102,13 @@ en:
     new: "New user?"
     remember: "remember_me"
     remember_on_computer: "Remember me on this computer"
+    pl_log: "Please log in"
+  edit:
+    title: "Edit user"
+    des1: "Update your profile"
+    save: "Save changes"
+    change: "Change"
+  update:
+    fl_suc: "Profile updated"
+  index:
+    title: "All users"

@@ -1,18 +1,8 @@
-<% provide :title, t("user.title") %>
-<h1><%= t "user.title" %></h1>
+<% provide(:title, t("user.title")) %>
+<% provide(:button_text, t("user.create")) %>
+<h1><%= t"user.title" %></h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for @user, url: signup_path do |f| %>
-     <%= render "shared/error_messages" %>
-     <%= f.label t("user.name")%>
-     <%= f.text_field t("user.name"), class: "form-control" %>
-     <%= f.label t("user.email") %>
-     <%= f.email_field t("user.email"), class: "form-control" %>
-     <%= f.label t("user.pass") %>
-     <%= f.password_field t("user.pass"), class: "form-control" %>
-     <%= f.label t("user.pass_conf"), "Confirmation" %>
-     <%= f.password_field t("user.pass_conf"), class: "form-control" %>
-     <%= f.submit t("user.descrip2"), class: "btn btn-primary"%>
-     <% end %>
+    <%= render "form" %>
   </div>
 </div>

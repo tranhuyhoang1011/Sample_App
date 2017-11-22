@@ -12,9 +12,9 @@
       <%= f.password_field t("user.pass"), class: "form-control" %>
 
       <%= f.label t("session.remember"), class: "checkbox inline" do %>
-        <%= f.check_box t("session.remember_on_computer") %>
-        <span><%= t("session.re1") %></span>
-      <% end %>
+        <%= f.check_box :remember_me %>
+        <span><%= t("session.remember_on_computer") %></span>
+        <% end %>
       <%= f.submit t("session.des1"), class: "btn btn-primary" %>
     <% end %>
 

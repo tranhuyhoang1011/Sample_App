@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :microposts, dependent: :destroy
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email
   before_create :create_activation_digest
@@ -30,7 +31,7 @@ class User < ApplicationRecord
   end
 
   def forget
-    update_attribute :remember_digest, nil
+    update_attributes remember_digest: nil
   end
 
   def activate
@@ -44,7 +45,7 @@ class User < ApplicationRecord
 
   def create_reset_digest
     self.reset_token = User.new_token
-    update_attribute :reset_digest, User.digest(reset_token)
+    update_attributes reset_digest: User.digest(reset_token)
     update_attribute :reset_sent_at, Time.zone.now
   end
 
@@ -53,7 +54,12 @@ class User < ApplicationRecord
   end
 
   def password_reset_expired?
-    reset_sent_at < Settings.reset_pass.hours.hours.ago
+    reset_sent_at < Settings.reset_pass.hour.hours.ago
+  end
+
+  def feed
+    Micropost.user_feed id
+    Micropost.user_create.user_feed id
   end
 
   private

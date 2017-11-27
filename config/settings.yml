@@ -7,3 +7,12 @@ user:
 
 reset_pass:
   hour: 2
+
+micropost:
+  maximum_content: 140
+  user: 50
+  file_type: "image/jpeg,image/gif,image/png"
+
+picture:
+  size: 5
+  size_limit: 400
